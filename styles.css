@@ -919,6 +919,10 @@ footer.section {
   .articles article {
     padding: 0 10px;
   }
+
+  .articles figure img {
+    width: 280px;
+  }
   .social-links {
     margin: auto;
   }
