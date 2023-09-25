@@ -21,11 +21,9 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-
+  font-family: "Epilogue", sans-serif;
   background: var(--background);
   color: var(--text-color);
-
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -254,7 +252,7 @@ header {
 
 .hero-right {
   margin-top: 40px;
-  width: 500px;
+  max-width: 500px;
   height: 500px;
   border-radius: 16px;
   overflow: hidden;
@@ -377,7 +375,7 @@ header {
 
 .articles figure img {
   height: 100%;
-  width: 320px;
+  max-width: 320px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   object-fit: cover;
@@ -409,7 +407,7 @@ header {
   align-items: center;
   position: relative;
   overflow: hidden;
-  width: 350px;
+  max-width: 350px;
   height: 450px;
   border-radius: 16px;
   overflow: hidden;
@@ -558,7 +556,7 @@ header {
 }
 
 .full-stack img {
-  width: 6.25em;
+  max-width: 6.25em;
   height: 6.25em;
 }
 
@@ -753,7 +751,7 @@ textarea {
 }
 
 .social-links img {
-  width: 24px;
+  max-width: 24px;
   height: 24px;
   transition: all 0.2s ease-in-out;
 }
@@ -797,7 +795,7 @@ footer.section {
   }
 
   .nav-toggle img {
-    width: 40px;
+    max-width: 40px;
   }
   .links-container {
     display: none;
@@ -921,7 +919,7 @@ footer.section {
   }
 
   .articles figure img {
-    width: 280px;
+    max-width: 280px;
   }
   .social-links {
     margin: auto;
