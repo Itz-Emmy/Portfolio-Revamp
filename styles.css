@@ -360,7 +360,6 @@ header {
 }
 
 .articles article img {
-  max-width: 100%;
   transform-origin: center;
   transition: transform 0.4s ease-in-out;
 }
@@ -378,6 +377,7 @@ header {
 
 .articles figure img {
   height: 100%;
+  width: 320px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   object-fit: cover;
