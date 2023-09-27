@@ -1,6 +1,6 @@
 // preloader
+const preloader = document.querySelector(".preload");
 const hidePreloader = () => {
-  const preloader = document.querySelector(".preload");
   preloader.classList.add("fadeOut");
   preloader.style.display = "none";
 };
