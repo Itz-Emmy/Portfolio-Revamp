@@ -1,3 +1,14 @@
+// preloader
+const hidePreloader = () => {
+  const preloader = document.querySelector(".preload");
+  preloader.classList.add("fadeOut");
+  preloader.style.display = "none";
+};
+
+window.addEventListener("load", () => {
+  setTimeout(hidePreloader, 2000);
+});
+
 const openHamburger = document.querySelector(".open");
 const closeHamburger = document.querySelector(".close");
 const openHamburgerLight = document.getElementById("dark-menu-open");
@@ -114,79 +125,77 @@ const footerColumns = document.querySelector(".footer-columns");
 const footerBottom = document.querySelector(".footer-bottom");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-console.log(prefersDarkScheme);
+// Enable dark mode
+const addClassToSectionAndChildren = () => {
+  openHamburgerLight.style.display = "block";
+  openHamburger.style.display = "none";
+  for (const section of sections) {
+    section.classList.add("dark-mode");
+    header.classList.add("dark-mode");
+    nav.style.background = "#333333";
+    body.classList.add("dark-mode");
+    footerColumns.classList.add("dark-mode");
+    footerBottom.classList.add("dark-mode");
+    footer.classList.add("dark-mode");
+    logoLight.style.display = "none";
+    logoDark.style.display = "block";
+
+    addClassToElementAndChildren(section, "dark-mode");
+    footerLogoDark.forEach((e) => {
+      e.style.display = "block";
+    });
+    footerLogoLight.forEach((e) => {
+      e.style.display = "none";
+    });
+  }
+};
+
+const addClassToElementAndChildren = (element, className) => {
+  element.classList.add(className);
+
+  const childElements = element.querySelectorAll("*");
+  childElements.forEach((child) => {
+    child.classList.add(className);
+  });
+};
+// Disable dark mode
+const removeClassFromSectionAndChildren = () => {
+  openHamburgerLight.style.display = "none";
+  openHamburger.style.display = "block";
+  for (const section of sections) {
+    section.classList.remove("dark-mode");
+    header.classList.remove("dark-mode");
+    nav.style.background = "#ffffff";
+    body.classList.remove("dark-mode");
+    footerColumns.classList.remove("dark-mode");
+    footerBottom.classList.remove("dark-mode");
+    footer.classList.remove("dark-mode");
+    logoLight.style.display = "block";
+    logoDark.style.display = "none";
+
+    removeClassFromElementAndChildren(section, "dark-mode");
+    footerLogoDark.forEach((e) => {
+      e.style.display = "none";
+    });
+    footerLogoLight.forEach((e) => {
+      e.style.display = "block";
+    });
+  }
+};
+const removeClassFromElementAndChildren = (element, className) => {
+  element.classList.remove(className);
+  const childElements = element.querySelectorAll("*");
+  childElements.forEach((child) => {
+    child.classList.remove(className);
+  });
+};
 
 const toggleDarkMode = () => {
   if (toggleSwitch.checked) {
-    // Enable dark mode
-
-    const addClassToSectionAndChildren = () => {
-      openHamburgerLight.style.display = "block";
-      openHamburger.style.display = "none";
-      for (const section of sections) {
-        section.classList.add("dark-mode");
-        header.classList.add("dark-mode");
-        nav.style.background = "#333333";
-        body.classList.add("dark-mode");
-        footerColumns.classList.add("dark-mode");
-        footerBottom.classList.add("dark-mode");
-        footer.classList.add("dark-mode");
-        logoLight.style.display = "none";
-        logoDark.style.display = "block";
-
-        addClassToElementAndChildren(section, "dark-mode");
-        footerLogoDark.forEach((e) => {
-          e.style.display = "block";
-        });
-        footerLogoLight.forEach((e) => {
-          e.style.display = "none";
-        });
-      }
-    };
-
-    const addClassToElementAndChildren = (element, className) => {
-      element.classList.add(className);
-
-      const childElements = element.querySelectorAll("*");
-      childElements.forEach((child) => {
-        child.classList.add(className);
-      });
-    };
     addClassToSectionAndChildren();
 
     localStorage.setItem("darkMode", "enabled");
   } else {
-    // Disable dark mode
-    const removeClassFromSectionAndChildren = () => {
-      openHamburgerLight.style.display = "none";
-      openHamburger.style.display = "block";
-      for (const section of sections) {
-        section.classList.remove("dark-mode");
-        header.classList.remove("dark-mode");
-        nav.style.background = "#ffffff";
-        body.classList.remove("dark-mode");
-        footerColumns.classList.remove("dark-mode");
-        footerBottom.classList.remove("dark-mode");
-        footer.classList.remove("dark-mode");
-        logoLight.style.display = "block";
-        logoDark.style.display = "none";
-
-        removeClassFromElementAndChildren(section, "dark-mode");
-        footerLogoDark.forEach((e) => {
-          e.style.display = "none";
-        });
-        footerLogoLight.forEach((e) => {
-          e.style.display = "block";
-        });
-      }
-    };
-    const removeClassFromElementAndChildren = (element, className) => {
-      element.classList.remove(className);
-      const childElements = element.querySelectorAll("*");
-      childElements.forEach((child) => {
-        child.classList.remove(className);
-      });
-    };
     removeClassFromSectionAndChildren();
   }
   if (toggleSwitch.checked) {

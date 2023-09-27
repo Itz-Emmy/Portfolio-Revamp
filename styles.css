@@ -9,6 +9,41 @@
   --github: #222222;
 }
 
+/* preloader */
+.preload {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 99999;
+  background: white;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.preload.fadeOut {
+  opacity: 0;
+}
+.loading-spinner {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  border-top: 10px solid #dd946f;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Dark Mode Styles */
 
 body.dark-mode,
