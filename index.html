@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emmanuel Agbonyeme || Web Developer</title>
+  <title>Emmanuel Agbonyeme | Web Developer</title>
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,8 @@
     <nav id="nav">
       <div class="nav-center">
         <div class="nav-header">
-          <img src="./img/logo-removebg-preview.webp" class="logo" alt="logo" />
-
+          <img src="./img/logo-removebg-preview.webp" class="logo light-logo" alt="logo" />
+          <img src="./img/a-removebg-preview.webp" class="logo dark-logo" alt="logo" />
         </div>
         <div class="links-container">
           <ul class="links">
@@ -38,11 +38,14 @@
               <a href="#contact" class="scroll-link">contact</a>
             </li>
           </ul>
+
         </div>
       </div>
       <span class="nav-toggle">
         <img src="./img/icons/burger-menu.svg" alt="burger menu" class="open">
+        <img src="./img/icons/burger-menu-dark.svg" alt="dark mode menu" class="open" id="dark-menu-open">
         <img src="./img/icons/close.svg" alt="burger menu close" class="close">
+        <img src="./img/icons/close-dark.svg" alt="dark mode menu close" class="close" id="dark-menu-close">
       </span>
     </nav>
 
@@ -365,14 +368,17 @@
         <span class='social-links'>
 
           <a href="https://www.linkedin.com/in/emmanuel-agbonyeme-87b38578/" title="Linkedin" target="_blank">
-            <img src="assets/linkedin.svg" alt='Linkedin'>
+            <img src="assets/linkedin.svg" alt='Linkedin' class="light">
+            <img src="assets/linkedin-dark.svg" alt='Linkedin' class="dark">
           </a>
           <a href="https://twitter.com/ose_omoro" title="Twitter" target="_blank">
-            <img src="assets/twitter.svg" alt='Twitter'>
+            <img src="assets/twitter.svg" alt='Twitter' class="light">
+            <img src="assets/twitter-dark.svg" alt='Twitter' class="dark">
           </a>
 
           <a href="https://github.com/Itz-Emmy" title="GitHub" target="_blank">
-            <img src="assets/github.svg" alt='GitHub'>
+            <img src="assets/github.svg" alt='GitHub' class="light">
+            <img src="assets/github-dark.svg" alt='GitHub' class="dark">
           </a>
         </span>
       </div>
@@ -381,6 +387,31 @@
   <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
+  <div id="mode-toggle">
+    <label for="toggle" id="toggle-label">
+      <div id="toggle-div">
+        <input type="checkbox" id="toggle" />
+        <div class="clouds">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+          <div class="cloud cloud-3"></div>
+          <div class="cloud cloud-4"></div>
+          <div class="cloud cloud-5"></div>
+        </div>
+        <div class="backdrops">
+          <div class="backdrop"></div>
+        </div>
+        <div class="stars">
+          <div class="star star-1"></div>
+          <div class="star star-2"></div>
+          <div class="star star-3"></div>
+        </div>
+        <div class="sun-moon">
+          <div class="crater"></div>
+        </div>
+      </div>
+    </label>
+  </div>
   <a class="scroll-link top-link" href="#home">
     <i class="fas fa-arrow-up"></i>
   </a>

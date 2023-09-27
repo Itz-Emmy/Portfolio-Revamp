@@ -9,6 +9,379 @@
   --github: #222222;
 }
 
+/* Dark Mode Styles */
+
+body.dark-mode,
+#portfolio.portfolio.section.dark-mode,
+#contact.dark-mode {
+  background: #333333 !important;
+  color: hsl(0, 0%, 98%) !important;
+}
+header#home.dark-mode,
+#about.section.dark-mode {
+  background: linear-gradient(to top, #2c3e50 0%, #34495e 100%) !important;
+}
+.dark-mode.fixed-nav {
+  background: #333333;
+}
+
+.dark-mode .links a {
+  color: hsl(0, 0%, 98%);
+}
+.dark-mode.fixed-nav .links a {
+  color: hsl(0, 0%, 98%) !important;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-hover),
+    var(--primary-hover) 50%,
+    #ffffff 50%
+  ) !important;
+}
+
+.hero-right.dark-mode {
+  background: #333333;
+}
+.hero-left.dark-mode h2,
+.hero-left.dark-mode h3,
+.portfolio-head.dark-mode h3,
+.articles article.dark-mode h2,
+.myEmail.dark-mode p,
+.myPhoneNumber.dark-mode p,
+.myEmail.dark-mode h6,
+.myPhoneNumber.dark-mode h6,
+.about-me.dark-mode h4 {
+  color: hsl(0, 0%, 98%) !important;
+}
+.profile-image.dark-mode {
+  background: #333 !important;
+}
+.profile-name.dark-mode {
+  background: #333 !important;
+  color: #fff;
+}
+.article-preview.dark-mode {
+  background: #333 !important;
+}
+
+.footer-bottom.dark-mode {
+  border-top: 1px solid #fff !important;
+}
+.footer-columns.dark-mode {
+  border-top: 1px solid #ffffff !important;
+}
+
+/* Dark Mode Styles */
+
+/* Night mode toggle */
+
+#toggle {
+  display: none;
+}
+
+#toggle-label {
+  cursor: pointer;
+  outline: transparent;
+}
+
+#toggle-div {
+  height: 60px;
+  width: 120px;
+  background-color: #357bb3;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms ease;
+  box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.8),
+    /* Reduced box-shadow values */ inset -1px -2px 2px rgba(0, 0, 0, 0.2),
+    2px 2px 2px rgba(255, 255, 255, 1); /* Reduced box-shadow values */
+}
+
+.backdrops {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 70px;
+  width: 70px;
+  transition: all 300ms ease;
+}
+
+.backdrop {
+  height: 140px;
+  width: 140px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 300ms ease;
+}
+
+.backdrop::after,
+.backdrop::before {
+  content: "";
+  height: 200px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  transition: all 300ms ease;
+}
+
+.backdrop::before {
+  left: 15%;
+}
+
+.backdrop::after {
+  left: 30%;
+}
+
+.clouds {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: all 300ms ease;
+}
+
+.cloud {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  background-color: #fbfbfb;
+  height: 20px;
+  width: 100px;
+  border-radius: 0 100px 100px 100px;
+  transform: scale(-0.8, 0.8);
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  background-color: #fbfbfb;
+  height: 20px;
+  width: 80px;
+  bottom: 18px;
+  left: 0;
+  border-radius: 100px 100px 0 0px;
+}
+
+.cloud::after {
+  content: "";
+  position: absolute;
+  background-color: #fbfbfb;
+  height: 40px;
+  width: 40px;
+  bottom: 18px;
+  left: 10px;
+  border-radius: 100%;
+}
+
+.cloud-1 {
+  top: 45%;
+  right: 22%;
+  transform: scale(-0.6, 0.6);
+  opacity: 0.5;
+}
+
+.cloud-2 {
+  top: 20%;
+  right: 0%;
+  transform: scale(-0.6, 0.6);
+  opacity: 0.5;
+}
+
+.cloud-3 {
+  top: 92%;
+  right: 35%;
+}
+
+.cloud-4 {
+  top: 85%;
+  right: 10%;
+  transform: scale(-1, 1);
+}
+
+.cloud-5 {
+  top: 60%;
+  right: -18%;
+  transform: rotateZ(-50deg) scale(-1, 1);
+}
+
+.sun-moon {
+  height: 50px;
+  width: 50px;
+  background-color: #f1c428;
+  border-radius: 50%;
+  box-shadow: inset 1px 2px 2px rgba(255, 255, 255, 0.5),
+    inset -1px -2px 2px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 15px;
+  top: 7px;
+  transition: 300ms ease;
+}
+.sun-moon::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: inset 1px 2px 2px rgba(255, 255, 255, 0.5),
+    inset -1px -2px 2px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  transition: 300ms ease;
+}
+
+/* NIGHT */
+
+.stars {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: all 300ms ease;
+}
+
+.star {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  background-color: #c4c9d2;
+  box-shadow: 0 0 4px #fff;
+  animation: twinkle 1s infinite alternate;
+}
+
+.star::before {
+  content: "";
+  position: absolute;
+  left: 300%;
+  top: 300%;
+  height: 4px;
+  width: 4px;
+  border-radius: 100%;
+  background-color: #c4c9d2;
+  box-shadow: 0 0 4px #fff;
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  left: 400%;
+  bottom: 400%;
+  height: 5px;
+  width: 5px;
+  border-radius: 100%;
+  background-color: #c4c9d2;
+  box-shadow: 0 0 4px #fff;
+}
+
+.star-2 {
+  left: 40%;
+  top: 10%;
+  transform: rotateZ(75deg) scale(1.1);
+  animation-delay: 300ms;
+}
+
+.star-3 {
+  left: 40%;
+  top: 60%;
+  transform: rotateZ(150deg) scale(0.8);
+  animation-delay: 600ms;
+}
+
+.crater {
+  display: none;
+  position: absolute;
+  left: 30%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #949eb2;
+  border-radius: 100%;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.crater::before {
+  content: "";
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  background-color: #949eb2;
+  border-radius: 100%;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.crater::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 40%;
+  left: 150%;
+  background-color: #949eb2;
+  border-radius: 100%;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+#toggle-div.night {
+  background-color: #1d1f2b;
+}
+
+input:checked ~ .clouds {
+  top: 150%;
+}
+
+input:checked ~ .sun-moon {
+  left: calc(100% - 60px);
+  top: -18px;
+  background-color: #c4c9d2;
+  transform: rotateZ(180deg) translate(0, -50%);
+}
+
+input:checked ~ .sun-moon::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+*/ input:checked ~ .backdrops {
+  left: calc(100% - 130px);
+}
+
+input:checked ~ .sun-moon .crater {
+  display: block;
+}
+
+input:checked ~ .stars {
+  top: 50%;
+}
+
+/* ANIMATIONS */
+
+@keyframes twinkle {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* Night mode toggle */
+
 html {
   scroll-behavior: smooth;
 }
@@ -36,6 +409,9 @@ a {
 }
 img:not(.logo) {
   width: 100%;
+}
+img.logo.dark-logo {
+  display: none;
 }
 img {
   display: block;
@@ -82,7 +458,6 @@ nav {
   left: 0;
   width: 100%;
   background: var(--background);
-  box-shadow: var(--primary);
   z-index: 999;
   border-bottom: 5px solid;
 }
@@ -133,13 +508,16 @@ nav {
   justify-content: space-between;
 }
 
-.close {
+.close,
+#dark-menu-close {
   display: none;
 }
 
 .logo {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 6px;
 }
 
 .links a {
@@ -288,6 +666,13 @@ header {
   visibility: hidden;
   z-index: -100;
 }
+
+#toggle-label {
+  position: fixed;
+  bottom: 2rem;
+  left: 1.5rem;
+  z-index: 999;
+}
 .show-link {
   visibility: visible;
   z-index: 100;
@@ -353,7 +738,6 @@ header {
 .articles article h2 {
   margin: 0 0 18px 0;
   font-size: 1.6rem;
-  color: var(--secondary);
   transition: color 0.3s ease-out;
 }
 
@@ -407,6 +791,7 @@ header {
   align-items: center;
   position: relative;
   overflow: hidden;
+  width: 350px;
   max-width: 350px;
   height: 450px;
   border-radius: 16px;
@@ -795,6 +1180,7 @@ footer.section {
   }
 
   .nav-toggle img {
+    width: 40px;
     max-width: 40px;
   }
   .links-container {
@@ -852,6 +1238,10 @@ footer.section {
   }
   .nav-header {
     right: 40%;
+  }
+
+  .nav-toggle img {
+    margin-top: 0px;
   }
   .hero-container {
     justify-content: center;
