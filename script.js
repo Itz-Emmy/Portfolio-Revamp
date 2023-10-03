@@ -15,12 +15,16 @@ const openHamburgerLight = document.getElementById("dark-menu-open");
 const closeHamburgerDark = document.getElementById("dark-menu-close");
 const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".links");
+const backToTop = document.querySelector(".top-link");
 
 openHamburgerLight.style.display = "none";
+closeHamburgerDark.style.display = "none";
 
 openHamburger.addEventListener("click", () => {
   openHamburger.style.display = "none";
   closeHamburger.style.display = "block";
+  openHamburgerLight.style.display = "none";
+  closeHamburgerDark.style.display = "none";
   linksContainer.style.display = `block`;
   linksContainer.style.width = "100vw";
 });
@@ -28,17 +32,22 @@ openHamburger.addEventListener("click", () => {
 closeHamburger.addEventListener("click", () => {
   closeHamburger.style.display = "none";
   openHamburger.style.display = "block";
-
+  openHamburgerLight.style.display = "none";
+  closeHamburgerDark.style.display = "none";
   linksContainer.style.display = `none`;
 });
 openHamburgerLight.addEventListener("click", () => {
   openHamburgerLight.style.display = "none";
+  closeHamburger.style.display = "none";
+  openHamburger.style.display = "none";
   closeHamburgerDark.style.display = "block";
   linksContainer.style.display = `block`;
   linksContainer.style.width = "100vw";
 });
 
 closeHamburgerDark.addEventListener("click", () => {
+  closeHamburger.style.display = "none";
+  openHamburger.style.display = "none";
   closeHamburgerDark.style.display = "none";
   openHamburgerLight.style.display = "block";
 
@@ -100,8 +109,15 @@ scrollLinks.forEach((link) => {
     if (window.innerWidth <= 768) {
       linksContainer.style.display = `none`;
     }
-    closeHamburger.style.display = "none";
-    openHamburger.style.display = "block";
+    if (body.classList.contains("dark-mode")) {
+      closeHamburger.style.display = "none";
+      openHamburger.style.display = "none";
+      closeHamburgerDark.style.display = "none";
+      openHamburgerLight.style.display = "block";
+    } else {
+      closeHamburger.style.display = "none";
+      openHamburger.style.display = "block";
+    }
   });
 });
 
@@ -123,7 +139,17 @@ const logoLight = document.querySelector(".light-logo");
 const footer = document.getElementById("contact");
 const footerColumns = document.querySelector(".footer-columns");
 const footerBottom = document.querySelector(".footer-bottom");
+const navLinks = document.querySelectorAll("a.scroll-link");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+backToTop.addEventListener("click", () => {
+  closeHamburgerDark.style.display = "none";
+  openHamburgerLight.style.display = "block";
+  if (body.classList.contains("dark-mode")) {
+    closeHamburger.style.display = "none";
+    openHamburger.style.display = "none";
+  }
+});
 
 // Enable dark mode
 const addClassToSectionAndChildren = () => {
@@ -139,6 +165,7 @@ const addClassToSectionAndChildren = () => {
     footer.classList.add("dark-mode");
     logoLight.style.display = "none";
     logoDark.style.display = "block";
+    backToTop.style.color = "#ffffff";
 
     addClassToElementAndChildren(section, "dark-mode");
     footerLogoDark.forEach((e) => {
@@ -172,6 +199,7 @@ const removeClassFromSectionAndChildren = () => {
     footer.classList.remove("dark-mode");
     logoLight.style.display = "block";
     logoDark.style.display = "none";
+    backToTop.style.color = "#333333";
 
     removeClassFromElementAndChildren(section, "dark-mode");
     footerLogoDark.forEach((e) => {
@@ -193,6 +221,10 @@ const removeClassFromElementAndChildren = (element, className) => {
 const toggleDarkMode = () => {
   if (toggleSwitch.checked) {
     addClassToSectionAndChildren();
+    navLinks.forEach((e) => {
+      e.style.color = "#ffffff !important";
+      e.style.backgroundImage = `linear-gradient(to right, var(--primary-hover), var(--primary-hover) 50%, #ffffff 50%) !important`;
+    });
 
     localStorage.setItem("darkMode", "enabled");
   } else {
