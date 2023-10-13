@@ -44,58 +44,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #333333;
-    --text-color: #fff;
-  }
-  body {
-    background: var(--background);
-    color: hsl(0, 0%, 98%);
-  }
-
-  img.logo.dark-logo {
-    display: block !important;
-  }
-  img.logo.light-logo {
-    display: none !important;
-  }
-  header,
-  #about {
-    background: linear-gradient(to top, #2c3e50 0%, #34495e 100%) !important;
-  }
-  .links a {
-    color: hsl(0, 0%, 98%) !important;
-    background-image: linear-gradient(
-      to right,
-      var(--primary-hover),
-      var(--primary-hover) 50%,
-      #ffffff 50%
-    ) !important;
-  }
-  .hero-left h2,
-  .hero-left h3,
-  .portfolio-head h3,
-  .articles article h2,
-  .myEmail p,
-  .myPhoneNumber p,
-  .myEmail h6,
-  .myPhoneNumber h6,
-  .about-me h4 {
-    color: hsl(0, 0%, 98%) !important;
-  }
-
-  .article-preview {
-    background: #333 !important;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid #fff !important;
-  }
-  .footer-columns {
-    border-top: 1px solid #ffffff !important;
-  }
-}
 /* Dark Mode Styles */
 
 body.dark-mode,
@@ -127,6 +75,7 @@ header#home.dark-mode,
 
 .hero-right.dark-mode {
   background: #333333;
+  box-shadow: 0 20px 20px rgba(255, 255, 255, 0.6);
 }
 .hero-left.dark-mode h2,
 .hero-left.dark-mode h3,

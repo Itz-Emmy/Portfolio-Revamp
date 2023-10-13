@@ -242,10 +242,7 @@ const checkDarkMode = () => {
   const darkModeSetting = localStorage.getItem("darkMode");
 
   // Check if the user's device is in dark mode and enable dark mode accordingly
-  if (prefersDarkScheme.matches) {
-    toggleSwitch.checked = true;
-    toggleDarkMode();
-  } else if (darkModeSetting === "enabled") {
+  if (darkModeSetting === "enabled") {
     toggleSwitch.checked = true;
     toggleDarkMode();
   } else {
@@ -262,11 +259,9 @@ checkDarkMode();
 
 prefersDarkScheme.addEventListener("change", (e) => {
   if (e.matches) {
-    // User switched to dark mode
     toggleSwitch.checked = true;
     toggleDarkMode();
   } else {
-    // User switched to light mode
     toggleSwitch.checked = false;
     removeClassFromSectionAndChildren();
   }
