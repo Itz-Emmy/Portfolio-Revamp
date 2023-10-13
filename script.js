@@ -252,6 +252,7 @@ const checkDarkMode = () => {
 };
 
 // Event listener for toggle switch
+
 toggleSwitch.addEventListener("change", toggleDarkMode);
 
 // Check initial dark mode setting
