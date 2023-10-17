@@ -85,6 +85,8 @@ header#home.dark-mode,
 .myPhoneNumber.dark-mode p,
 .myEmail.dark-mode h6,
 .myPhoneNumber.dark-mode h6,
+.myEmail.dark-mode i,
+.myPhoneNumber.dark-mode i,
 .about-me.dark-mode h4 {
   color: hsl(0, 0%, 98%) !important;
 }
@@ -967,7 +969,7 @@ header {
 .about-me p {
   margin-left: 10px;
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: 1.5;
   color: #fff;
 }
 
@@ -1107,12 +1109,10 @@ textarea {
 .myEmail,
 .myPhoneNumber {
   display: flex;
-  padding: 30px;
+  padding: 20px;
 }
 .myEmail h6,
 .myPhoneNumber h6 {
-  margin-left: 15px;
-  margin-bottom: 15px;
   font-size: 16px;
   font-weight: normal;
   color: #202942;
@@ -1120,27 +1120,14 @@ textarea {
 
 .myEmail p,
 .myPhoneNumber p {
-  margin-left: 15px;
   font-weight: bold;
   color: #273048;
 }
 
-.myEmail i {
-  background-color: #00c0ff;
-  width: 70px;
-  height: 70px;
-  padding: 18px;
-  color: #fff;
-  border-radius: 5px;
-}
-
+.myEmail i,
 .myPhoneNumber i {
-  background-color: #fec447;
-  width: 70px;
-  height: 70px;
-  padding: 18px;
-  color: #fff;
-  border-radius: 5px;
+  width: 50px;
+  color: #333;
 }
 
 /* Footer bottom */
@@ -1330,15 +1317,11 @@ footer.section {
   .myPhoneNumber {
     padding: 10px;
   }
-  .myEmail i {
-    width: 60px;
-    height: 60px;
+
+  input[type="email"] {
+    margin-left: 0;
   }
-  .myPhoneNumber i {
-    width: 60px;
-    height: 60px;
-    padding: 16px;
-  }
+
   .articles article {
     padding: 0 10px;
   }
