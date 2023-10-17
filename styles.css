@@ -691,7 +691,7 @@ header {
 .top-link {
   font-size: 1.25rem;
   position: fixed;
-  bottom: 3rem;
+  bottom: 1.5rem;
   right: 1.5rem;
   background: var(--primary);
   width: 2rem;
@@ -707,7 +707,7 @@ header {
 
 #toggle-label {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1.5rem;
   left: 1.5rem;
   z-index: 999;
 }
