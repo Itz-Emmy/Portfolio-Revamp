@@ -1046,6 +1046,10 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+div[data-netlify-recaptcha] {
+  margin-bottom: 10px;
+}
 .hidden {
   visibility: hidden;
   height: 0;
@@ -1300,7 +1304,7 @@ footer.section {
     max-width: 300px;
   }
   textarea {
-    width: 100%;
+    width: 220px;
   }
   .profile {
     width: 300px;
