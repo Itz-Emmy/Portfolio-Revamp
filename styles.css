@@ -971,6 +971,7 @@ header {
   font-size: 1.2rem;
   line-height: 1.5;
   color: #fff;
+  text-align: justify;
 }
 
 .full-stack {
@@ -1053,16 +1054,11 @@ form {
 .contact-form input {
   border: 1px solid #222222;
   color: #222222;
-  margin-bottom: 10px;
   margin-right: auto;
   font-size: 1rem;
   flex: 1 0 50px;
   padding: 8px 12px;
   border-radius: 6px;
-}
-
-input[type="email"] {
-  margin-left: 5px;
 }
 
 textarea {
@@ -1228,6 +1224,10 @@ footer.section {
     flex-direction: column;
   }
 
+  .social-media-buttons {
+    justify-content: center;
+  }
+
   .hero-right {
     margin: auto;
     margin-top: 40px;
@@ -1276,6 +1276,7 @@ footer.section {
   .hero-left {
     margin: 0;
     padding-top: 0;
+    text-align: center;
   }
   .hero-left h2 {
     font-size: 40px;
@@ -1299,7 +1300,7 @@ footer.section {
     max-width: 300px;
   }
   textarea {
-    width: 250px;
+    width: 100%;
   }
   .profile {
     width: 300px;
