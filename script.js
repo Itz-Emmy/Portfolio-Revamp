@@ -67,7 +67,6 @@ closeHamburgerDark.addEventListener("click", () => {
   openHamburgerLight.style.display = "block";
   linksContainer.style.display = `none`;
   heroSection.style.position = "static";
-  heroSection.style.paddingTop = "0";
   navbar.style.position = "fixed";
 });
 
