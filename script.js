@@ -43,7 +43,6 @@ closeHamburger.addEventListener("click", () => {
   closeHamburgerDark.style.display = "none";
   linksContainer.style.display = `none`;
   heroSection.style.position = "static";
-  heroSection.style.paddingTop = "0";
   navbar.style.position = "fixed";
 });
 openHamburgerLight.addEventListener("click", () => {
