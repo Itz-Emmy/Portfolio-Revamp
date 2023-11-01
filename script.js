@@ -16,6 +16,8 @@ const closeHamburgerDark = document.getElementById("dark-menu-close");
 const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".links");
 const backToTop = document.querySelector(".top-link");
+const heroSection = document.querySelector(".hero");
+const navbar = document.getElementById("nav");
 
 openHamburgerLight.style.display = "none";
 closeHamburgerDark.style.display = "none";
@@ -27,6 +29,11 @@ openHamburger.addEventListener("click", () => {
   closeHamburgerDark.style.display = "none";
   linksContainer.style.display = `block`;
   linksContainer.style.width = "100vw";
+  heroSection.style.position = "relative";
+  heroSection.style.zIndex = "5";
+  heroSection.style.paddingTop = "70px";
+  navbar.style.position = "fixed";
+  navbar.style.zIndex = "999";
 });
 
 closeHamburger.addEventListener("click", () => {
@@ -35,6 +42,9 @@ closeHamburger.addEventListener("click", () => {
   openHamburgerLight.style.display = "none";
   closeHamburgerDark.style.display = "none";
   linksContainer.style.display = `none`;
+  heroSection.style.position = "static";
+  heroSection.style.paddingTop = "0";
+  navbar.style.position = "fixed";
 });
 openHamburgerLight.addEventListener("click", () => {
   openHamburgerLight.style.display = "none";
@@ -43,6 +53,11 @@ openHamburgerLight.addEventListener("click", () => {
   closeHamburgerDark.style.display = "block";
   linksContainer.style.display = `block`;
   linksContainer.style.width = "100vw";
+  heroSection.style.position = "relative";
+  heroSection.style.zIndex = "5";
+  heroSection.style.paddingTop = "70px";
+  navbar.style.position = "fixed";
+  navbar.style.zIndex = "999";
 });
 
 closeHamburgerDark.addEventListener("click", () => {
@@ -50,13 +65,14 @@ closeHamburgerDark.addEventListener("click", () => {
   openHamburger.style.display = "none";
   closeHamburgerDark.style.display = "none";
   openHamburgerLight.style.display = "block";
-
   linksContainer.style.display = `none`;
+  heroSection.style.position = "static";
+  heroSection.style.paddingTop = "0";
+  navbar.style.position = "fixed";
 });
 
 // ********** fixed navbar ************
 
-const navbar = document.getElementById("nav");
 const topLink = document.querySelector(".top-link");
 
 window.addEventListener("scroll", () => {
