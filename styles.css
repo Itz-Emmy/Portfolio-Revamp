@@ -656,14 +656,14 @@ header {
 }
 
 .social-media-button:hover:nth-child(1) {
-  background-color: var(--twitter);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .social-media-button:hover:nth-child(2) {
   background-color: var(--linkedin);
 }
 .social-media-button:hover:nth-child(3) {
-  background-color: var(--github);
+  background-color: var(--text-color);
 }
 
 .hero-right {
