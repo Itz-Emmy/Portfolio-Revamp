@@ -6,20 +6,35 @@ const hidePreloader = () => {
 };
 
 window.addEventListener("load", () => {
-  setTimeout(hidePreloader, 2000);
+  setTimeout(hidePreloader, 1000);
 });
 
 const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".links");
+const linkAnchors = document.querySelectorAll(".links a");
 const backToTop = document.querySelector(".top-link");
 const heroSection = document.querySelector(".hero");
 const navbar = document.getElementById("nav");
 const navToggle = document.querySelector(".nav-toggle");
+const toggleSpan1 = navToggle.querySelector("b:nth-child(1)");
+const toggleSpan2 = navToggle.querySelector("b:nth-child(2)");
+const toggleSpan3 = navToggle.querySelector("b:nth-child(3)");
 
 navToggle.addEventListener("click", () => {
   if (!navToggle.classList.contains("open")) {
     navToggle.classList.add("open");
-    linksContainer.style.display = `block`;
+    linksContainer.classList.add("open");
+    toggleSpan1.style.transform = "rotateZ(45deg)";
+    toggleSpan3.style.transform = "rotateZ(-45deg)";
+    toggleSpan3.style.transition = "transform 0.8s ease-in-out";
+    navToggle.style.transition = "transform 0.8s ease-in-out";
+    navToggle.style.transform = "rotateZ(180deg)";
+    navToggle.style.top = "60px";
+    navToggle.style.right = "8%";
+    toggleSpan2.style.display = "none";
+    toggleSpan1.style.top = "19px";
+    linksContainer.style.height = `auto`;
+    linksContainer.style.overflow = `visible`;
     linksContainer.style.width = "100vw";
     heroSection.style.position = "relative";
     heroSection.style.zIndex = "5";
@@ -28,7 +43,18 @@ navToggle.addEventListener("click", () => {
     navbar.style.zIndex = "999";
   } else {
     navToggle.classList.remove("open");
-    linksContainer.style.display = `none`;
+    linksContainer.classList.remove("open");
+    navToggle.style.transform = "rotateZ(360deg)";
+    navToggle.style.transition = "transform 0.8s ease-in-out";
+    navToggle.style.top = "20px";
+    toggleSpan3.style.transition = "transform 0.8s ease-in-out";
+    toggleSpan2.style.display = "block";
+    toggleSpan1.style.transform = "rotateZ(180deg)";
+    navToggle.style.transform = "none";
+    toggleSpan3.style.transform = "none";
+    toggleSpan1.style.top = "10px";
+    toggleSpan3.style.top = "20px";
+
     heroSection.style.position = "static";
     navbar.style.position = "fixed";
   }
@@ -49,7 +75,6 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.classList.remove("fixed-nav");
   }
-  // setup back to top link
 
   if (scrollHeight > 500) {
     topLink.classList.add("show-link");
@@ -59,14 +84,27 @@ window.addEventListener("scroll", () => {
 });
 
 // ********** smooth scroll ************
-// select links
 const scrollLinks = document.querySelectorAll(".scroll-link");
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    // prevent default
     e.preventDefault();
-    // navigate to specific spot
     navToggle.classList.remove("open");
+    linksContainer.classList.remove("open");
+    navToggle.style.transition = "transform 0.8s ease-in-out";
+    navToggle.style.transform = "rotateZ(-180deg)";
+    navToggle.style.top = "20px";
+    toggleSpan3.style.transition = "transform 0.8s ease-in-out";
+    toggleSpan3.style.transform = "none";
+    toggleSpan2.style.display = "block";
+    toggleSpan1.style.transform = "rotateZ(180deg)";
+    toggleSpan3.style.transform = "none";
+    navToggle.style.transform = "none";
+    toggleSpan3.style.transform = "none";
+    toggleSpan1.style.top = "10px";
+    toggleSpan3.style.top = "20px";
+
+    heroSection.style.position = "static";
+    navbar.style.position = "fixed";
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
 
@@ -86,9 +124,6 @@ scrollLinks.forEach((link) => {
       left: 0,
       top: position,
     });
-    if (window.innerWidth <= 768) {
-      linksContainer.style.display = `none`;
-    }
   });
 });
 
@@ -99,7 +134,7 @@ footerLogoDark.forEach((e) => {
   e.style.display = "none";
 });
 
-// Get the toggle switch and elements that need dark mode adjustments
+// toggle functionality
 const toggleSwitch = document.getElementById("toggle");
 const sections = document.getElementsByTagName("section");
 const header = document.getElementById("home");
@@ -117,11 +152,11 @@ backToTop.addEventListener("click", () => {
   navToggle.classList.remove("open");
 });
 
-// Enable dark mode
 const addClassToSectionAndChildren = () => {
-  const navToggleSpan = document.querySelectorAll(".nav-toggle span");
+  const navToggleSpan = document.querySelectorAll(".nav-toggle b");
+
   navToggleSpan.forEach((e) => {
-    e.style.background = "#ffffff";
+    e.style.background = "#f1f1f1";
   });
   for (const section of sections) {
     section.classList.add("dark-mode");
@@ -133,7 +168,7 @@ const addClassToSectionAndChildren = () => {
     footer.classList.add("dark-mode");
     logoLight.style.display = "none";
     logoDark.style.display = "block";
-    backToTop.style.color = "#ffffff";
+    backToTop.style.color = "#f1f1f1";
 
     addClassToElementAndChildren(section, "dark-mode");
     footerLogoDark.forEach((e) => {
@@ -153,16 +188,16 @@ const addClassToElementAndChildren = (element, className) => {
     child.classList.add(className);
   });
 };
-// Disable dark mode
+
 const removeClassFromSectionAndChildren = () => {
-  const navToggleSpan = document.querySelectorAll(".nav-toggle span");
+  const navToggleSpan = document.querySelectorAll(".nav-toggle b");
   navToggleSpan.forEach((e) => {
     e.style.background = "#333333";
   });
   for (const section of sections) {
     section.classList.remove("dark-mode");
     header.classList.remove("dark-mode");
-    nav.style.background = "#ffffff";
+    nav.style.background = "#f1f1f1";
     body.classList.remove("dark-mode");
     footerColumns.classList.remove("dark-mode");
     footerBottom.classList.remove("dark-mode");
@@ -192,8 +227,8 @@ const toggleDarkMode = () => {
   if (toggleSwitch.checked) {
     addClassToSectionAndChildren();
     navLinks.forEach((e) => {
-      e.style.color = "#ffffff !important";
-      e.style.backgroundImage = `linear-gradient(to right, var(--primary-hover), var(--primary-hover) 50%, #ffffff 50%) !important`;
+      e.style.color = "#f1f1f1 !important";
+      e.style.backgroundImage = `linear-gradient(to right, var(--primary-hover), var(--primary-hover) 50%, #f1f1f1 50%) !important`;
     });
 
     localStorage.setItem("darkMode", "enabled");
@@ -207,11 +242,9 @@ const toggleDarkMode = () => {
   }
 };
 
-// Function to check the initial dark mode setting
 const checkDarkMode = () => {
   const darkModeSetting = localStorage.getItem("darkMode");
 
-  // Check if the user's device is in dark mode and enable dark mode accordingly
   if (darkModeSetting === "enabled") {
     toggleSwitch.checked = true;
     toggleDarkMode();
@@ -221,11 +254,8 @@ const checkDarkMode = () => {
   }
 };
 
-// Event listener for toggle switch
-
 toggleSwitch.addEventListener("change", toggleDarkMode);
 
-// Check initial dark mode setting
 checkDarkMode();
 
 prefersDarkScheme.addEventListener("change", (e) => {
