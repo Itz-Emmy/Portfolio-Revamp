@@ -168,7 +168,6 @@ const addClassToSectionAndChildren = () => {
     footer.classList.add("dark-mode");
     logoLight.style.display = "none";
     logoDark.style.display = "block";
-    backToTop.style.color = "#f1f1f1";
 
     addClassToElementAndChildren(section, "dark-mode");
     footerLogoDark.forEach((e) => {
@@ -204,7 +203,6 @@ const removeClassFromSectionAndChildren = () => {
     footer.classList.remove("dark-mode");
     logoLight.style.display = "block";
     logoDark.style.display = "none";
-    backToTop.style.color = "#333333";
 
     removeClassFromElementAndChildren(section, "dark-mode");
     footerLogoDark.forEach((e) => {

@@ -106,7 +106,10 @@ header#home.dark-mode,
 .footer-columns.dark-mode {
   border-top: 1px solid #f1f1f1 !important;
 }
-
+.myEmail.dark-mode svg,
+.myPhoneNumber.dark-mode svg {
+  fill: #f1f1f1;
+}
 /* Dark Mode Styles */
 
 /* Night mode toggle */
@@ -1121,11 +1124,8 @@ textarea {
   font-weight: bold;
   color: #273048;
 }
-
-.myEmail i,
-.myPhoneNumber i {
-  width: 50px;
-  color: #333;
+.contact-info svg {
+  margin: 10px;
 }
 
 /* Footer bottom */
