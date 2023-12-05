@@ -67,6 +67,9 @@ const topLink = document.querySelector(".top-link");
 window.addEventListener("scroll", () => {
   if (window.innerWidth <= 768) {
     navbar.classList.add("fixed-nav");
+    backToTop.addEventListener("click", () => {
+      heroSection.style.paddingTop = "70px";
+    });
   }
   const scrollHeight = window.scrollY;
   const navHeight = navbar.getBoundingClientRect().height;
